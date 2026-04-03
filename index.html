@@ -1,23 +1,733 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://yourdomain.com/kona-maintenance-cost"
+      },
+      "headline": "코나 유지비 | 2026년 최신 정보 기반 코나 전기차 하이브리드 가솔린 유지 비용 완벽 분석 비교",
+      "image": "https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg",
+      "author": {
+        "@type": "Organization",
+        "name": "Hyundai Kona Maintenance Cost Analysis Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "자동차 유지비 분석 센터",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://yourdomain.com/logo.png"
+        }
+      },
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-03-20",
+      "description": "2026년 코나 유지비에 대한 완벽한 가이드. 전기차(EV) 모델, 하이브리드 모델, 가솔린 모델별 연간 보험료, 세금, 충전/주유 비용, 소모품 교체 비용을 상세하게 비교 분석하여 정확한 예상 견적을 제공합니다."
+    }
+    </script>
+
+    <style>
+      /* Base Styles */
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.8;
+        background-color: #f7f9fc;
+        color: #2c3e50;
+      }
+      header {
+        background-color: #ffffff;
+        border-bottom: 2px solid #e0e6ec;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+      header h1 {
+        color: #004d99;
+        font-weight: 900;
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        color: #555;
+        font-size: 1rem;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+      nav a {
+        color: #004d99;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        transition: background-color 0.3s ease;
+      }
+      nav a:hover {
+        background-color: #eaf1f8;
+      }
+      main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      section {
+        background-color: white;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      }
+      h2 {
+        color: #004d99;
+        font-size: 1.8rem;
+        font-weight: 700;
+        border-bottom: 3px solid #f2f7ff;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      h3 {
+        color: #333;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        border-left: 5px solid #004d99;
+        padding-left: 0.8rem;
+      }
+      p {
+        color: #444;
+        font-size: 1rem;
+      }
+
+      /* Image and Call to Action */
+      .main-visual {
+        width: 100%;
+        height: 400px;
+        background-image: url('https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .cta-card {
+        background-color: #eaf1f8;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .cta-card h3 {
+        color: #004d99;
+        margin-top: 0;
+        border-left: none;
+      }
+      .cta-button {
+        display: inline-block;
+        background-color: #ff6600;
+        color: white;
+        font-weight: 700;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        margin: 1rem 0;
+        transition: background-color 0.3s ease;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .cta-button:hover {
+        background-color: #e65c00;
+      }
+
+      /* Content Elements */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 2rem;
+      }
+      th, td {
+        padding: 1rem;
+        border: 1px solid #ddd;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+      th {
+        background-color: #004d99;
+        color: white;
+        font-weight: 600;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      tr:hover {
+        background-color: #f1f7fe;
+      }
+      .list-style-icon {
+        list-style: none;
+        padding-left: 0;
+      }
+      .list-style-icon li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+      .list-style-icon li::before {
+        content: "\f058"; /* Check circle icon from Font Awesome */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: #004d99;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      /* Interactive Elements (FAQ Accordion and Calculator Form) */
+      .faq-list {
+        list-style: none;
+        padding: 0;
+      }
+      .faq-item {
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #ffffff;
+      }
+      .faq-question {
+        background-color: #f1f7fe;
+        color: #004d99;
+        padding: 1rem;
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+      }
+      .faq-question:hover {
+        background-color: #e0f0ff;
+      }
+      .faq-answer {
+        padding: 1rem;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        display: none;
+      }
+      .faq-question.active + .faq-answer {
+        display: block;
+      }
+
+      .calculator-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+      .form-group label {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #333;
+      }
+      .form-group input, .form-group select {
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 1rem;
+      }
+      #calculation-result {
+        background-color: #eaf1f8;
+        padding: 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      /* SEO Keywords Section */
+      .keyword-tags {
+        margin: 1.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .keyword-tags a {
+        background-color: #eaf1f8;
+        color: #004d99;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        border: 1px solid #b3d1ff;
+      }
+      .keyword-tags a:hover {
+        background-color: #b3d1ff;
+      }
+
+      /* Footer and External Links */
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        color: #777;
+        background-color: #eaf1f8;
+        margin-top: 3rem;
+        border-top: 1px solid #d3e0f0;
+      }
+      .external-links {
+        margin-top: 2rem;
+        padding: 1rem;
+        border-top: 1px dashed #ddd;
+      }
+      .external-links h3 {
+        color: #004d99;
+      }
+      .external-links ul {
+        list-style: none;
+        padding: 0;
+      }
+      .external-links li {
+        margin-bottom: 0.5rem;
+      }
+      .external-links a {
+        color: #004d99;
+        text-decoration: none;
+      }
+      .external-links a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 1.8rem;
+        }
+        main {
+          margin: 1rem auto;
+          padding: 0 0.5rem;
+        }
+        section {
+          padding: 1.5rem;
+          margin-bottom: 1rem;
+        }
+        h2 {
+          font-size: 1.6rem;
+        }
+        nav ul {
+          gap: 1rem;
+        }
+        .calculator-form {
+          grid-template-columns: 1fr;
+        }
+        .main-visual {
+            height: 250px;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>코나 유지비 | 2026년 최신 정보 기반 유지비 완벽 분석</h1>
+        <p>코나 전기차(EV), 하이브리드(HEV), 가솔린(휘발유) 모델별 유지 비용 완벽 비교 및 견적 시뮬레이터</p>
+        <nav>
+            <ul>
+                <li><a href="#summary">유지비 요약</a></li>
+                <li><a href="#comparison">모델별 비교</a></li>
+                <li><a href="#detail">상세 비용 분석</a></li>
+                <li><a href="#simulator">비용 계산기</a></li>
+                <li><a href="#faq">자주 묻는 질문</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <!-- Main Visual -->
+        <div class="main-visual"></div>
+
+        <!-- Section 1: Introduction and Summary (유지비 요약) -->
+        <section id="summary">
+            <h2>코나 유지비, 모델별 연간 비용 요약</h2>
+            <p>코나는 현대자동차의 소형 SUV 라인업으로, 가솔린, 하이브리드, 전기차 등 다양한 파워트레인을 제공하여 소비자 선택의 폭이 넓습니다. 차량 구매 전 고려해야 할 핵심 요소 중 하나가 바로 <strong>유지비</strong>입니다. 단순히 차량 가격만 볼 것이 아니라, 보험료, 세금, 연료비(전기차의 경우 충전비), 그리고 소모품 교체 주기를 종합적으로 분석해야 합니다.</p>
+            <p>본 페이지에서는 2026년 최신 데이터를 기반으로 코나 2세대(SX2) 모델을 중심으로 가솔린, 하이브리드, 전기차의 1년간 예상 유지비를 비교 분석하여, 잠재 구매자가 자신의 주행 환경과 예산에 맞는 합리적인 선택을 할 수 있도록 돕습니다.</p>
+
+            <h3>모델별 예상 연간 유지비 (2026년 기준)</h3>
+            <p>아래 표는 연간 15,000km 주행, 30대 운전자 기준의 평균적인 예상 비용입니다. (자세한 내용은 상세 분석 섹션에서 확인하세요.)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>모델</th>
+                        <th>자동차세 (연)</th>
+                        <th>연료/충전비 (연)</th>
+                        <th>보험료 (연)</th>
+                        <th>총 예상 비용 (연)</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>코나 가솔린 1.6T</strong></td>
+                        <td>약 290,000원</td>
+                        <td>약 2,000,000원</td>
+                        <td>약 700,000원</td>
+                        <td>약 2,990,000원</td>
+                        <td>초기 비용 저렴</td>
+                    </tr>
+                    <tr>
+                        <td><strong>코나 하이브리드</strong></td>
+                        <td>약 290,000원</td>
+                        <td>약 1,100,000원</td>
+                        <td>약 750,000원</td>
+                        <td>약 2,140,000원</td>
+                        <td>연비 효율 우수</td>
+                    </tr>
+                    <tr>
+                        <td><strong>코나 일렉트릭 (EV)</strong></td>
+                        <td>약 130,000원</td>
+                        <td>약 400,000원</td>
+                        <td>약 850,000원</td>
+                        <td>약 1,380,000원</td>
+                        <td>압도적 운영비 절감</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 2: Model Comparison (모델별 비교) -->
+        <section id="comparison">
+            <h2>코나 모델별 장단점 및 유지비 차이점 분석</h2>
+            <p>코나를 선택할 때 가장 고민되는 부분은 파워트레인입니다. 각 모델은 뚜렷한 장점과 단점을 가지고 있으며, 이는 유지비용에도 직접적인 영향을 미칩니다.</p>
+
+            <h3>1. 코나 전기차 (Kona Electric) 유지비 상세 분석</h3>
+            <ul class="list-style-icon">
+                <li><strong>장점:</strong> 압도적인 저렴한 유지비가 가장 큰 장점입니다. 특히 주행거리가 긴 운전자에게 매우 유리합니다. 전기 요금은 급속 충전과 완속 충전, 시간대에 따라 크게 차이가 나지만, 가정용 완속 충전기 사용 시 가솔린 대비 1/5 수준의 에너지 비용이 발생합니다.</li>
+                <li><strong>단점:</strong> 초기 구매 비용이 높으며, 보험료가 가솔린 모델보다 다소 비쌉니다. 배터리 관리의 중요성이 높고, 충전 인프라에 대한 의존도가 높습니다. 장거리 운행 시 충전 스트레스가 발생할 수 있습니다.</li>
+            </ul>
+
+            <h3>2. 코나 하이브리드 (Kona Hybrid) 유지비 상세 분석</h3>
+            <ul class="list-style-icon">
+                <li><strong>장점:</strong> 가솔린 모델과 전기차 모델의 장점을 적절히 섞어놓았습니다. 높은 연비를 자랑하며, 초기 구매 비용이 전기차보다는 저렴합니다. 별도의 충전 없이 주유만으로 운행이 가능하여 편리합니다.</li>
+                <li><strong>단점:</strong> 가솔린 모델보다 초기 구매 비용이 비싸며, 전기차보다 연료비 절감 효과는 적습니다. 하이브리드 시스템 특성상 소모품 교체 주기가 일반 가솔린 차량과 차이를 보일 수 있습니다.</li>
+            </ul>
+
+            <h3>3. 코나 가솔린 (Kona Gasoline) 유지비 상세 분석</h3>
+            <ul class="list-style-icon">
+                <li><strong>장점:</strong> 가장 저렴한 초기 구매 비용을 가지고 있으며, 익숙한 운행 방식과 풍부한 정비 인프라가 장점입니다. 코나 N Line과 같이 주행 성능에 초점을 맞춘 모델 선택이 가능합니다.</li>
+                <li><strong>단점:</strong> 세 모델 중 연비가 가장 낮아 연료비 지출이 큽니다. 연간 주행거리가 많다면 유지비 부담이 가중될 수 있습니다.</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Detailed Cost Analysis (상세 비용 분석) -->
+        <section id="detail">
+            <h2>코나 유지비 상세 구성 요소별 분석 (2026년 기준)</h2>
+            <p>유지비는 크게 고정비(자동차세, 보험료)와 변동비(연료비, 소모품 교체비)로 나뉩니다. 각 항목에 대한 심층적인 분석을 제공하여 정확한 예상 견적을 산출할 수 있도록 돕습니다.</p>
+
+            <h3>1. 자동차세 및 보험료 (고정 비용)</h3>
+            <p>자동차세는 배기량(CC)을 기준으로 부과됩니다. 코나 전기차는 배기량이 없으므로 비교적 저렴한 정액 세금이 적용됩니다. 2026년 기준으로 코나 1.6T 가솔린/하이브리드 모델은 약 290,000원의 자동차세가 예상됩니다.</p>
+            <p>보험료는 운전자의 연령, 운전 경력, 사고 이력 등에 따라 천차만별입니다. 일반적으로 전기차는 차량 가격이 높고 부품 단가가 비싸기 때문에 가솔린 모델보다 보험료가 10~20% 높게 책정될 수 있습니다. 30대 운전자 기준, 코나 가솔린 모델의 연간 보험료는 70~80만원, 코나 일렉트릭은 80~90만원 선에서 형성됩니다.</p>
+
+            <h3>2. 연료비 및 충전비 (변동 비용)</h3>
+            <p>연료비는 유지비에서 가장 큰 비중을 차지하는 변동 비용입니다. 연간 주행거리가 15,000km라고 가정했을 때, 코나 모델별 예상 비용은 다음과 같습니다.</p>
+            <ul>
+                <li><strong>코나 가솔린 (연비 13.0km/L):</strong> 연간 약 200만 원 (휘발유 1,600원/L 기준)</li>
+                <li><strong>코나 하이브리드 (연비 19.8km/L):</strong> 연간 약 110만 원 (휘발유 1,600원/L 기준)</li>
+                <li><strong>코나 일렉트릭 (전비 5.5km/kWh):</strong> 연간 약 40만 원 (전기 충전비 200원/kWh 기준, 공용 급속/완속 혼합)</li>
+            </ul>
+            <p>코나 전기차의 경우, 가정용 완속 충전기를 사용하면 kWh당 100~150원대 요금이 적용되어 비용 절감 효과가 더욱 커집니다. 2026년에도 전기차 충전 요금이 계속 인상될 가능성이 있지만, 가솔린 대비 압도적인 유지비 우위는 변하지 않을 것으로 예상됩니다.</p>
+
+            <h3>3. 소모품 교체 주기 및 비용 비교</h3>
+            <p>소모품 교체 비용은 장기적인 유지비에 큰 영향을 미칩니다. 코나 모델별 주요 소모품 교체 주기를 비교합니다. <a href="https://www.namu.wiki/w/%EC%BD%94%EB%82%98" target="_blank">나무위키</a>와 같은 전문 정보 출처에서 소모품 주기를 확인하는 것도 좋습니다.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>소모품</th>
+                        <th>코나 가솔린/하이브리드</th>
+                        <th>코나 일렉트릭 (EV)</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>엔진 오일</strong></td>
+                        <td>10,000km 또는 1년마다 교체</td>
+                        <td>교체 불필요</td>
+                        <td>EV 유지비 장점</td>
+                    </tr>
+                    <tr>
+                        <td><strong>미션 오일</strong></td>
+                        <td>40,000~60,000km마다 교체</td>
+                        <td>감속기 오일 60,000km마다 교체</td>
+                        <td>EV는 변속기 구조 단순</td>
+                    </tr>
+                    <tr>
+                        <td><strong>브레이크 패드/오일</strong></td>
+                        <td>40,000~50,000km마다 점검/교체</td>
+                        <td>회생 제동 덕분에 교체 주기가 김</td>
+                        <td>EV 유지비 장점</td>
+                    </tr>
+                    <tr>
+                        <td><strong>타이어</strong></td>
+                        <td>40,000~60,000km마다 교체</td>
+                        <td>40,000~60,000km마다 교체 (EV 전용 타이어 사용 권장)</td>
+                        <td>EV는 타이어 마모 빠를 수 있음</td>
+                    </tr>
+                    <tr>
+                        <td><strong>배터리</strong></td>
+                        <td>해당 없음</td>
+                        <td>고전압 배터리 10년/20만km 보증 (보증 후 교체 시 수백만원)</td>
+                        <td>장기 유지비 변수</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>코나 가솔린 모델은 엔진 오일 교체 비용이 정기적으로 발생합니다. 반면 코나 EV는 회생 제동 기능으로 브레이크 패드 교체 주기가 길어지므로 소모품 비용이 절약되는 장점이 있습니다. 다만 EV의 경우 고전압 배터리의 보증 기간(10년 또는 20만km)이 지난 후 문제가 발생하면 수백만 원의 고가 수리 비용이 발생할 수 있으므로, 보증 기간을 꼼꼼히 확인하고 중고차 구매 시에는 배터리 상태를 확인해야 합니다. 중고차 시장에서 코나 EV를 구매할 때도 이러한 장단점을 면밀히 비교해봐야 합니다. <a href="https://www.carisyou.com" target="_blank">자동차 전문 매체</a> 등에서 제공하는 내돈내산 후기나 실질적인 비용 비교를 통해 꼼꼼히 확인하는 것이 좋습니다.</p>
+
+            <h3>4. 코나 1세대 vs 2세대 유지비 차이점 (OS vs SX2)</h3>
+            <p>코나 1세대(OS) 모델은 2세대(SX2) 모델에 비해 연비 효율이 떨어지고, 특히 1.6T 가솔린 모델의 경우 1세대는 연비가 다소 낮은 편이었습니다. 2세대 모델은 하이브리드 모델의 효율을 극대화하고 전기차의 주행 거리를 늘려 전반적인 유지비 절감에 초점을 맞추었습니다. 중고차 시장에서 1세대 코나를 저렴한 가격으로 구매할 경우, 2세대 대비 연료비 지출이 더 많을 수 있다는 점을 고려해야 합니다.</p>
+        </section>
+
+        <!-- Section 4: Maintenance Cost Simulator (비용 계산기) -->
+        <section id="simulator">
+            <h2>나만을 위한 코나 유지비 예상 견적 계산기</h2>
+            <p>실제 유지비는 운전자의 주행 습관, 연간 주행거리, 거주 지역(충전 환경)에 따라 크게 달라집니다. 아래 계산기로 나에게 맞는 예상 유지비를 산출해 보세요.</p>
+            <form id="maintenance-calculator" class="calculator-form">
+                <div class="form-group">
+                    <label for="model-select">차량 모델 선택:</label>
+                    <select id="model-select" required>
+                        <option value="gasoline">코나 가솔린 1.6T</option>
+                        <option value="hybrid">코나 하이브리드</option>
+                        <option value="electric">코나 전기차</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mileage">연간 예상 주행거리 (km):</label>
+                    <input type="number" id="mileage" value="15000" min="1000" required>
+                </div>
+                <div class="form-group">
+                    <label for="insurance-age">운전자 연령대:</label>
+                    <select id="insurance-age" required>
+                        <option value="20s">20대 (높은 보험료 예상)</option>
+                        <option value="30s">30대 (표준)</option>
+                        <option value="40s">40대 이상 (저렴한 보험료 예상)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fuel-price">현재 휘발유 가격 (L당 원):</label>
+                    <input type="number" id="fuel-price" value="1600" min="100" required>
+                </div>
+                <button type="button" class="cta-button" onclick="calculateCost()">예상 비용 계산하기</button>
+            </form>
+            <div id="calculation-result">계산 결과를 여기에 표시합니다.</div>
+            <p><strong>참고:</strong> 위 계산기는 평균적인 데이터를 기반으로 한 예상치이며, 실제 견적과는 차이가 있을 수 있습니다. 정확한 견적은 보험사 및 정비소에 직접 문의하시기 바랍니다.</p>
+        </section>
+
+        <!-- Section 5: Tips for Cost Reduction (비용 절감 팁) -->
+        <section id="cost-reduction-tips">
+            <h2>코나 유지비 절감을 위한 실용적인 팁</h2>
+            <p>코나를 효율적으로 운영하고 유지비를 절감할 수 있는 실질적인 방법을 소개합니다. 특히 코나 하이브리드와 전기차 모델은 운전 습관에 따라 연비 효율이 크게 달라지므로, 다음 팁을 참고하여 비용을 아껴보세요.</p>
+            <ul class="list-style-icon">
+                <li><strong>연비 운전 습관:</strong> 급가속과 급제동을 피하고 정속 주행을 유지합니다. 하이브리드 모델의 경우 회생 제동을 적극적으로 활용하여 연료 효율을 높일 수 있습니다.</li>
+                <li><strong>타이어 공기압 관리:</strong> 적정 타이어 공기압을 유지하면 연비가 향상되고 타이어 수명이 길어집니다. 특히 코나 일렉트릭은 타이어 마모도가 빠를 수 있으니 정기적인 점검이 중요합니다.</li>
+                <li><strong>보험료 비교:</strong> 매년 자동차 보험 갱신 시 여러 보험사의 견적을 비교하는 것이 필수입니다. 다이렉트 보험을 이용하면 설계사 수수료만큼 저렴한곳을 찾을 수 있습니다. 신규 가입 혜택이나 할인 이벤트도 꼼꼼히 확인하세요.</li>
+                <li><strong>정비소 선택:</strong> 공식 서비스 센터 외에 저렴한 사설 정비소를 이용하는 것도 비용 절감의 방법입니다. 다만 소모품 교체 시 정품 부품 사용 여부와 전문성을 확인해야 합니다.</li>
+                <li><strong>정부 및 지자체 혜택 활용:</strong> 전기차 보조금(2026년 기준), 세제 혜택(개별소비세 감면 등)을 확인하여 최대한 활용합니다. 코나 EV 소유자는 공영 주차장 할인 혜택 등도 놓치지 말아야 합니다.</li>
+            </ul>
+        </section>
+
+        <!-- Section 6: AI Analysis and Future Trends (미래 전망 및 AI 분석) -->
+        <section>
+            <h2>AI 기반 유지비 분석 및 미래 전망 (2026년)</h2>
+            <p>최근에는 <a href="https://www.google.com/search?q=AI+%EB%B9%84%EC%9A%A9+%EB%B6%84%EC%84%9D" target="_blank">AI 기술</a>을 활용하여 개인 맞춤형 차량 유지비 분석이 가능해지고 있습니다. Gemini나 ChatGPT와 같은 AI 에이전트는 사용자의 운전 패턴 데이터를 분석하여 가장 효율적인 정비 시점과 비용 절감 방안을 제시합니다. 2026년에는 차량 유지보수 예측 서비스가 더욱 고도화되어, 소모품 교체 시기를 예측하고 저렴한 곳을 추천해주는 AI 챗봇 서비스가 보편화될 것으로 예상됩니다.</p>
+            <p>특히 코나 전기차의 경우 배터리 상태 진단 및 수명 예측 기술이 발전하고 있어, 장기적인 유지비 부담을 줄이는 데 도움이 될 것입니다. 또한, 네이버, 구글, 유튜브 등 다양한 플랫폼에서 AI 기반의 차량 관리 정보를 제공하는 전문 업체들이 늘어나고 있습니다.</p>
+        </section>
+
+        <!-- Section 7: Keyword Tags and SEO -->
+        <section>
+            <h2>코나 유지비 관련 인기 키워드</h2>
+            <div class="keyword-tags">
+                <a href="#summary">코나 유지비 평균</a>
+                <a href="#comparison">코나 전기차 유지비</a>
+                <a href="#comparison">코나 하이브리드 유지비</a>
+                <a href="#comparison">코나 가솔린 유지비</a>
+                <a href="#detail">코나 1세대 유지비</a>
+                <a href="#detail">코나 2세대 유지비</a>
+                <a href="#detail">코나 N Line 유지비</a>
+                <a href="#detail">코나 소모품 비용</a>
+                <a href="#detail">코나 보험료 견적</a>
+                <a href="#detail">코나 자동차세</a>
+                <a href="#detail">코나 타이어 교체 비용</a>
+                <a href="#detail">코나 배터리 교체 가격</a>
+                <a href="#simulator">코나 유지비 시뮬레이터</a>
+                <a href="#faq">코나 장점 단점 비교</a>
+                <a href="#faq">코나 연비 비교</a>
+                <a href="#cost-reduction-tips">코나 유지비 저렴한곳</a>
+                <a href="#cost-reduction-tips">코나 내돈내산 후기</a>
+                <a href="#cost-reduction-tips">코나 할인 혜택</a>
+                <a href="#cost-reduction-tips">코나 신규 가입 이벤트</a>
+                <a href="#summary">코나 유지비 차이점</a>
+                <a href="#summary">코나 비교 추천</a>
+                <a href="#summary">코나 비용 절감</a>
+                <a href="#summary">코나 견적 비용</a>
+                <a href="#detail">코나 전문 업체</a>
+                <a href="#detail">코나 가입 순위</a>
+                <a href="#detail">코나 상품권 현금지원</a>
+                <a href="#detail">코나 디시 후기</a>
+                <a href="#cost-reduction-tips">코나 싼곳</a>
+                <a href="#cost-reduction-tips">코나 지원금</a>
+            </div>
+        </section>
+
+        <!-- Section 8: FAQ (자주 묻는 질문) -->
+        <section id="faq">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <p>코나 유지비에 대해 고객들이 자주 묻는 질문을 정리했습니다. 질문을 클릭하면 답변을 확인할 수 있습니다.</p>
+            <ul class="faq-list">
+                <li class="faq-item">
+                    <div class="faq-question" tabindex="0" aria-expanded="false">
+                        <span class="faq-text">Q. 코나 전기차와 하이브리드 중 유지비 절감 효과가 더 큰 모델은 무엇인가요?</span>
+                        <span class="faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        A. 주행거리가 길수록 코나 전기차(EV)가 압도적으로 유리합니다. 연간 주행거리 2만km 이상이라면 전기차의 연료비 절감 효과가 하이브리드 모델을 훨씬 능가합니다. 하지만 초기 구매 비용과 충전 편의성을 고려해야 합니다. 주행거리가 짧다면 하이브리드 모델의 효율도 충분히 좋습니다.
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question" tabindex="0" aria-expanded="false">
+                        <span class="faq-text">Q. 코나 N Line 모델은 일반 가솔린 모델보다 유지비가 더 많이 드나요?</span>
+                        <span class="faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        A. 코나 N Line 모델은 스포티한 주행 성능에 초점을 맞춰 일반 가솔린 모델보다 연비가 다소 낮을 수 있습니다. 또한, 고성능 타이어나 브레이크가 적용된 경우 소모품 교체 비용이 일반 모델보다 높을 수 있습니다.
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question" tabindex="0" aria-expanded="false">
+                        <span class="faq-text">Q. 코나 하이브리드 모델의 배터리 보증 기간과 교체 비용은 어떻게 되나요?</span>
+                        <span class="faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        A. 코나 하이브리드 모델의 고전압 배터리는 일반적으로 10년/20만km의 보증 기간이 적용됩니다. 보증 기간 내에는 무상 수리 또는 교체가 가능하지만, 기간이 지난 후에는 수백만 원의 교체 비용이 발생할 수 있으므로, 보증 기간을 꼼꼼히 확인하고 차량을 구매해야 합니다.
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question" tabindex="0" aria-expanded="false">
+                        <span class="faq-text">Q. 2026년 이후 코나 유지비 전망은 어떻게 되나요?</span>
+                        <span class="faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        A. 2026년에도 전기차 충전 요금이 꾸준히 인상될 것으로 예상되지만, 여전히 가솔린 대비 유지비 우위를 지킬 것으로 보입니다. 다만, 정부의 전기차 보조금 축소 정책과 인플레이션으로 인해 보험료나 소모품 가격은 전반적으로 상승할 가능성이 높습니다.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Section 9: External Resources (외부 링크) -->
+        <section class="external-links">
+            <h2>신뢰할 수 있는 외부 정보 출처</h2>
+            <p>더 자세한 정보 확인을 위해 다음 외부 사이트를 참고하십시오.</p>
+            <ul>
+                <li><a href="https://www.carisyou.com/car-review" target="_blank">CARISYOU - 코나 시승기 및 유지비 리뷰</a> (다양한 코나 모델의 장단점 및 실사용자 후기를 확인할 수 있습니다.)</li>
+                <li><a href="https://www.gov.kr/portal/loc_search/loc_tax_search.do" target="_blank">대한민국 정부24 - 자동차세 계산 및 납부 안내</a> (자동차세 산출의 공식 기준을 확인할 수 있습니다.)</li>
+                <li><a href="https://ev.or.kr/" target="_blank">한국EV협회</a> (전기차 관련 최신 동향 및 보조금 정보를 얻을 수 있습니다.)</li>
+                <li><a href="https://www.hyundai.com/kr/ko/customer-service/service-network/regular-check" target="_blank">현대자동차 공식 서비스센터 정기점검 가이드</a> (공식 정비 지침 및 소모품 교체 주기를 확인할 수 있습니다.)</li>
+                <li><a href="https://www.korea.kr/policy/policyView.do?pblctDtlId=150001851" target="_blank">대한민국 정책브리핑 - 친환경차 관련 세금 감면 정책</a> (정부의 최신 친환경차 지원 정책을 확인할 수 있습니다.)</li>
+            </ul>
+        </section>
     </main>
-  </body>
-</html>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // FAQ Accordion Toggle functionality
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const toggleIcon = question.querySelector('.faq-toggle-icon i');
+
+            question.addEventListener('click', () => {
+                const isActive = question.classList.contains('active');
+                document.querySelectorAll('.faq-item .faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.style.display = 'none';
+                    q.querySelector('.fa-plus').classList.remove('fa-minus');
+                });
+
+                if (!isActive) {
+                    question.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                    answer.style.display = 'block';
+                    toggleIcon.classList.remove('fa-plus');
+                    toggleIcon.classList.add('fa-minus');
+                }
+            });
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
+        });
+
+        // Maintenance Cost Simulator functionality
+        function calculateCost() {
+            const model = document.getElementById('model-select').value;
+            const mileage = parseInt(document.getElementById('mileage').value);
+            const insuranceAge = document.getElementById('insurance-age').value;
+            const fuelPrice = parseInt(document.getElementById('fuel-price').value);
+
+            // Base values (annual cost estimates based on 15,000km, 30대)
+            const baseData = {
+                gasoline: {
+                    tax: 290000,
+                    fuelCostPerKm: fuelPrice / 13.0, // 13.0km/L average for Kona Gasoline 1.6T
+                    insuranceBase: 700000,
+                    maintenanceBase: 150000 // Oil change, minor checks
+                },
+                hybrid: {
+                    tax: 290000,
+                    fuelCostPerKm: fuelPrice / 19.8, // 19.8km/L average for Kona Hybrid
+                    insuranceBase: 750000,
+                    maintenanceBase: 100000 // Less engine maintenance, more complex system checks
+                },
+                electric: {
+                    tax: 130000,
+                    fuelCostPerKm: 200 / 5.5, // 5.5km/kWh average, 200 KRW/kWh charging rate (mixed)
+                    insuranceBase: 850000,
+                    maintenanceBase: 50000 // Simplified maintenance (no oil change)
+                }
+            };
+
+            const data = baseData[model];
+            const fuelCost = Math.round(data.fuelCostPerKm * mileage);
+            let insuranceCost = data.insuranceBase;
+
+            // Adjust insurance based on age group
+            if (insuranceAge === '20s') {
+                insuranceCost *= 1.3; // 30% increase for young drivers
+            } else if (insuranceAge === '40s') {
+                insuranceCost *= 0.8; // 20% discount for experienced drivers
+            }
+
+            const totalAnnualCost = Math.round(data.tax + fuelCost + insuranceCost + data.maintenanceBase * (mileage / 15000));
+
+            const resultDiv = document.getElementById('calculation-result');
+            resultDiv.innerHTML = `
+                <h3>예상 연간 유지비 결과</h3>
+                <p><strong>선택 모델:</strong> ${document.getElementById('model-select').options[document.getElementById('model-select').selectedIndex].text}</p>
+                <p><strong>예상 주행거리:</strong> ${mileage.toLocaleString()} km</p>
+                <p><strong>예상 총 연간 비용:</strong> <strong>${totalAnnualCost.toLocaleString()} 원</strong></p>
+                <p><em>(세부 항목: 연료/충전비 ${fuelCost.toLocaleString()}원, 보험료 ${Math.round(insuranceCost).toLocaleString()}원, 자동차세 ${data.tax.toLocaleString()}원, 기타 소모품 ${Math.round(data.maintenanceBase * (mileage / 15000)).toLocaleString()}원)</em></p>
+            `;
+        }
+    </script>
+  
